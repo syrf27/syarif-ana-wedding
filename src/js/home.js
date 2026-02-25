@@ -15,7 +15,7 @@ export const home = () => {
                 <div class="portrait-frame"></div>
                 <img src="${coupleImage}" alt="couple animation">
             </div>
-            <figcaption class="sacramento-font"><div class="heart-name-bg"><video autoplay loop muted playsinline><source src="src/assets/images/Heart fly transparent BG!.webm" type="video/webm"></video></div>${brideLNickname} <i class='bx bxs-heart-circle gold-text' style='font-size: 2rem; vertical-align: middle; margin: 0 0.5rem;'></i> ${bridePNickname}</figcaption>`;
+            <figcaption class="sacramento-font"><div class="heart-name-bg"></div>${brideLNickname} <i class='bx bxs-heart-circle gold-text' style='font-size: 2rem; vertical-align: middle; margin: 0 0.5rem;'></i> ${bridePNickname}</figcaption>`;
     };
 
     const generateTimeContent = ({ time }) => {
