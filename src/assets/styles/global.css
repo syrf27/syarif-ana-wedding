@@ -1,22 +1,30 @@
 :root {
-    --primary-font-color: '#212529';
-    --bg-color: #f8f9fa;
+    --primary-font-color: #2c2c2c;
+    --bg-color: #ffffff;
+    --bg-secondary: #faf9f6;
+    --gold: #d4af37;
+    --gold-light: #f1e5ac;
+    --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f1e5ac 50%, #d4af37 100%);
+    --white: #ffffff;
 
-    --fontSize-heading-lg: 3rem;
+    --fontSize-heading-lg: 3.5rem;
     --fontSize-heading-base: 2.8rem;
     --fontSize-text-base: 1rem;
 
-    --sacramento: Sacramento, cursive;
+    --sacramento: 'Sacramento', cursive;
     --arabic: 'Noto Naskh Arabic', serif;
+    --josefin: 'Josefin Sans', sans-serif;
 
-    --shadow-md: 0 0 10px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 15px rgba(212, 175, 55, 0.2);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.05);
 
-    --transition-small: all .3s ease;
+    --transition-small: all .3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
     scroll-behavior: smooth;
     scrollbar-width: none !important;
+    overflow-x: hidden;
 }
 
 * {
@@ -30,10 +38,12 @@ html {
 body {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--primary-font-color);
+    overflow-x: hidden;
     overflow-y: hidden;
 }
 
 body.active {
+    overflow-x: hidden;
     overflow-y: auto;
 }
 
@@ -46,22 +56,24 @@ p {
 }
 
 .audio button {
-    width: 2rem;
-    height: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
-    border: none;
-    background-color: #fff;
-    color: #000;
-    font-size: 1.2rem;
+    border: 2px solid var(--white);
+    background: var(--gold-gradient);
+    color: var(--white);
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
-    right: 1rem;
-    bottom: 1rem;
+    right: 2rem;
+    bottom: 2rem;
     cursor: pointer;
     transform: translateX(200%);
-    transition: 1.5s transform ease;
+    transition: 1s cubic-bezier(0.7, 0, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    z-index: 90;
 }
 
 .audio button.show {
@@ -69,25 +81,190 @@ p {
 }
 
 .audio button.active {
-    animation: rotate 3s linear infinite;
+    animation: rotate 5s linear infinite;
 }
 
-
 @keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @keyframes upAndDown {
-    0%, 100% {
-        transform: translateY(-0.8rem);
-    }
-    50% {
-        transform: translateY(0.8rem);
-    }
+    0%, 100% { transform: translateY(-0.5rem); }
+    50% { transform: translateY(0.5rem); }
+}
+
+/* Global Decorations & Ornaments */
+.floating-deco {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37' opacity='0.2'%3E%3Cpath d='M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C22,3 11,1 11,12C11,12.33 11,12.67 11.05,13C7,8 2,8 2,8'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.deco-1 { top: 10%; left: 5%; animation: float 6s ease-in-out infinite; }
+.deco-2 { top: 40%; right: 5%; animation: float 8s ease-in-out infinite reverse; }
+.deco-3 { bottom: 15%; left: 10%; animation: float 7s ease-in-out infinite; }
+
+/* Luxury Background Watermark */
+.luxury-mandala-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background-image: url("/public/luxury-mandala-decorative-ethnic-element-wedding-invitation-background-free-png.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Luxury Corner Ornaments - Victorian Scrolls */
+.welcome-leaf, .home-leaf {
+    width: 280px; /* Increased size for more 'wow' effect */
+    height: 280px;
+    position: absolute;
+    background-image: url("/public/floral-ornament-for-design-free-png.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 20;
+    opacity: 1; /* Full opacity for better visibility */
+    filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.3)); /* Stronger shadow */
+}
+
+.leaf-top-left { top: -30px; left: -30px; transform: rotate(180deg); --rot: 180deg; --tx: -15px; --ty: -15px; }
+.leaf-top-right { top: -30px; right: -30px; transform: rotate(270deg); --rot: 270deg; --tx: 15px; --ty: -15px; }
+.leaf-bottom-right { bottom: -30px; right: -30px; transform: rotate(0deg); --rot: 0deg; --tx: 15px; --ty: 15px; }
+.leaf-bottom-left { bottom: -30px; left: -30px; transform: rotate(90deg); --rot: 90deg; --tx: -15px; --ty: 15px; }
+
+.welcome.active .welcome-leaf, .home.active .home-leaf {
+    animation: luxuryPulse 10s ease-in-out infinite; /* Slightly faster pulse */
+}
+
+@keyframes luxuryPulse {
+    0%, 100% { transform: rotate(var(--rot, 0deg)) translate(0, 0) scale(1); }
+    50% { transform: rotate(var(--rot, 0deg)) translate(var(--tx, 0), var(--ty, 0)) scale(1.05); }
+}
+
+/* Floating Luxury Accents */
+.aesthetic-spark {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url("/public/gold-element-wedding-card-png.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10;
+    pointer-events: none;
+    animation: luxuryFloat 8s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+@keyframes luxuryFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg) scale(1.1); opacity: 0.4; }
+    50% { transform: translateY(-30px) rotate(15deg) scale(1.2); opacity: 0.8; }
+}
+
+.spark-1 { top: 15%; left: 8%; animation-delay: 0s; }
+.spark-2 { top: 55%; right: 10%; animation-delay: 1s; }
+.spark-3 { bottom: 15%; left: 12%; animation-delay: 2s; }
+.spark-4 { top: 25%; right: 15%; animation-delay: 0.5s; }
+.spark-5 { bottom: 30%; left: 18%; animation-delay: 1.5s; }
+.spark-6 { top: 45%; left: 50%; animation-delay: 2.5s; }
+
+/* Portrait Decorative Frame */
+.portrait-frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 115%;
+    height: 115%;
+    background-image: url("/public/luxury-gold-leaf-frame-border-floral-ornament-for-background-wedding-invitation-thank-you-card-logo-greeting-card-free-png.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    animation: rotateFrame 20s linear infinite;
+}
+
+@keyframes rotateFrame {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Section Specific High-End Decorations */
+.time #time-title {
+    position: relative;
+    z-index: 10;
+}
+
+.section-divider {
+    width: 100%;
+    height: 80px;
+    background-image: url("/public/traditional-floral-divider-design-with-golden-scroll-with-swirls-on-transparent-background-free-png.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    margin: 3rem auto;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+}
+
+.bride-ornament, .time-ornament {
+    display: none; /* Replaced by localized background ornaments if needed */
+}
+
+
+/* Global Animations & Utilities */
+.gold-text { color: var(--gold) !important; }
+.sacramento-font { font-family: var(--sacramento) !important; }
+
+.heart-name-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart-name-bg video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 450px;
+    height: 350px;
+    object-fit: contain;
+}
+
+section h2 {
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gold-gradient);
+    border-radius: 5px;
 }

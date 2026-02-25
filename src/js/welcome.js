@@ -1,22 +1,25 @@
-import {data} from "../assets/data/data.js";
-import {addClassElement, getQueryParameter, removeClassElement} from "../utils/helper.js";
+import { data } from "../assets/data/data.js";
+import { addClassElement, getQueryParameter, removeClassElement } from "../utils/helper.js";
 
 export const welcome = () => {
     const welcomeElement = document.querySelector('.welcome');
     const homeElement = document.querySelector('.home');
     const navbarElement = document.querySelector('header nav');
 
-    const [_, figureElement, weddingToElement, openWeddingButton] = welcomeElement.children;
+    const figureElement = welcomeElement.querySelector('figure');
+    const weddingToElement = welcomeElement.querySelector('p');
+    const openWeddingButton = welcomeElement.querySelector('button');
     const [audioMusic, audioButton] = document.querySelector('.audio').children;
-    const [iconButton] = audioButton.children;
+    const iconButton = audioButton.querySelector('i');
 
     const generateFigureContent = (bride) => {
-        const {L: {name: brideLName}, P: {name: bridePName}, couple: coupleImage} = bride;
+        const { L: { nickname: brideLNickname }, P: { nickname: bridePNickname }, couple: coupleImage } = bride;
         return `
-            <img src="${coupleImage}" alt="couple animation">
-            <figcaption>
-                ${brideLName.split(' ')[0]} & ${bridePName.split(' ')[0]}
-            </figcaption>`;
+            <div style="position: relative; display: inline-block;">
+                <div class="portrait-frame"></div>
+                <img src="${coupleImage}" alt="couple animation">
+            </div>
+            <figcaption class="sacramento-font"><div class="heart-name-bg"><video autoplay loop muted playsinline><source src="src/assets/images/Heart fly transparent BG!.webm" type="video/webm"></video></div>${brideLNickname} <i class='bx bxs-heart-circle gold-text' style='font-size: 2rem; vertical-align: middle; margin: 0 0.5rem;'></i> ${bridePNickname}</figcaption>`;
     };
 
     const generateParameterContent = () => {

@@ -1,191 +1,117 @@
 @media screen and (max-width: 768px) {
+    :root {
+        --fontSize-heading-lg: 2.5rem;
+        --fontSize-heading-base: 2rem;
+    }
+
     header nav {
         display: flex;
     }
 
-    .home svg {
-        bottom: -5rem;
+    .welcome h2 {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
     }
 
-    .bride, .time{
-        padding: 6rem 1.4rem 8rem;
+    .welcome figure img {
+        width: 10rem;
+        height: 10rem;
     }
 
-    .bride h2, .bride h3 {
+    .welcome-ornament, .welcome-leaf, .home-leaf {
+        width: 120px;
+        height: 120px;
+    }
+
+    .leaf-top-left { top: -25px; left: -25px; }
+    .leaf-top-right { top: -25px; right: -25px; }
+    .leaf-bottom-left { bottom: -25px; left: -25px; }
+    .leaf-bottom-right { bottom: -25px; right: -25px; }
+
+    .luxury-mandala-bg {
+        width: 100%;
+        height: 400px;
+    }
+
+    .home figure img {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .home .home-time {
+        gap: 0.8rem;
+    }
+
+    .home .home-time div {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .home .home-time div p {
+        font-size: 1.1rem;
+    }
+
+    .bride i, .hadist i {
         font-size: 1.8rem;
     }
 
-    .bride i:nth-of-type(1) {
-        right: 1.4rem;
-        top: 2.6rem;
+    .bride .bride_couple li figure img {
+        width: 12rem;
+        height: 12rem;
     }
 
-    .bride i:nth-of-type(2) {
-        left: 1.4rem;
-        top: 24rem;
+    .bride .bride_couple li figure figcaption {
+        font-size: 2.2rem;
     }
 
-    .bride i:nth-of-type(3) {
-        right: 1.4rem;
-        top: 55rem;
+    .hadist p {
+        font-size: 1rem;
     }
 
-    .bride i:nth-of-type(4) {
-        left: 1.4rem;
-        top: 60rem;
-    }
-
-    .bride i:nth-of-type(5) {
-        right: 1.4rem;
-    }
-
-    .hadist {
-        padding: 2rem 1.4rem;
-    }
-
-    .hadist i {
-        left: 1.4rem;
-        top: 24rem;
-    }
-
-    .hadist svg:nth-of-type(1) {
-        top: -4rem;
-    }
-
-    .hadist svg:nth-of-type(2) {
-        bottom: -5rem;
-    }
-
-    .time a + p + i {
-        right: 1.4rem;
-        top: 16rem;
-    }
-
-    .galeri {
-        margin-top: -6rem;
-        padding: 4rem 1.4rem;
-    }
-
-    .galeri .container {
-        padding: 0 1rem 1rem;
-    }
-
-    .galeri .container figure {
-        margin-top: -1rem;
+    .time .time-card {
+        width: 100%;
+        max-width: 320px;
     }
 
     .galeri .container figure img {
-        height: 14rem;
-    }
-
-    .galeri .container ul {
-        bottom: 5rem;
-    }
-
-    .galeri .container ul li {
-        width: 1rem;
-        height: 0.2rem;
-    }
-
-    .galeri .container button:nth-of-type(1),
-    .galeri .container button:nth-of-type(2) {
-        top: 12.4rem;
-        font-size: 3rem;
-    }
-
-    .galeri .container button:nth-of-type(1) {
-        left: 0.8rem;
-    }
-
-    .galeri .container button:nth-of-type(2){
-        right: 0.8rem;
-    }
-
-    .galeri div:nth-of-type(2) {
-        padding: 0 1rem 4rem;
+        height: 300px;
     }
 
     .galeri div:nth-of-type(2) > div {
-        margin-top: -1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .wishas div:nth-of-type(2), .wishas div:nth-of-type(3) {
         padding: 2rem 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-        gap: 1rem;
-    }
-
-    .galeri div:nth-of-type(2) > div img {
-        border-radius: 15px;
-    }
-
-    .galeri div:nth-of-type(2) button {
-        font-size: 1.4rem;
-    }
-
-    .galeri > i {
-        top: 2rem;
-        left: 3rem;
-    }
-
-    .wishas {
-        padding: 1rem 1.4rem 2rem;
-        margin-top: -14rem;
-    }
-
-    .wishas div:nth-of-type(1) > div{
-        flex-direction: column;
-    }
-
-    .wishas div:nth-of-type(1) > div figure {
-        width: 100%;
-    }
-
-    .wishas div:nth-of-type(1) > div figure img {
-        width: 8rem;
-    }
-
-    .wishas div:nth-of-type(2) {
-        padding: 2rem 1rem;
-    }
-
-    .wishas div:nth-of-type(2) > form {
-        margin-top: -1rem;
-    }
-
-    .wishas div:nth-of-type(3) {
-        padding: 2rem 1rem;
-    }
-
-    .wishas div:nth-of-type(3) ul li {
-        gap: 0.6rem;
-    }
-
-    .wishas div:nth-of-type(3) .button-grup  button {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.8rem;
-    }
-
-    .wishas svg:nth-of-type(1){
-        top: -4rem;
-    }
-
-    .wishas svg:nth-of-type(2) {
-        bottom: -5rem;
     }
 
     .audio button {
-        bottom: 5rem;
-        right: 0.8rem;
+        bottom: 7rem;
+        right: 1.5rem;
     }
 
-    footer {
-        margin-top: 4rem;
-        padding: 1rem 1.4rem 3.4rem;
+    footer > div {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home figure figcaption {
+        font-size: 2.8rem;
+    }
+    
+    .bride .bride_couple span {
+        font-size: 3rem;
     }
 
-    footer h2 {
-        font-size: 1.4rem;
+    header nav a i {
+        font-size: 1.2rem;
     }
 
-    footer > div a {
+    header nav a span {
         font-size: 0.6rem;
+        letter-spacing: 0.5px;
     }
 }

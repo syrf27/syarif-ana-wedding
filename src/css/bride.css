@@ -2,21 +2,26 @@
     width: 100%;
     min-height: 100vh;
     text-align: center;
-    padding: 10rem 8rem;
+    padding: 6rem 1rem;
     position: relative;
+    background-color: var(--white);
+    overflow: hidden;
 }
 
 .bride h2 {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-family: var(--arabic);
     font-weight: 400;
+    color: var(--gold);
+    margin-bottom: 2rem;
 }
 
 .bride h3 {
-    font-size: var(--fontSize-heading-base);
-    font-family: var(--sacramento);
-    font-weight: 400;
-    margin: 1rem 0;
+    font-size: 1.4rem;
+    font-family: var(--josefin);
+    font-weight: 300;
+    margin: 1.5rem 0;
+    color: var(--primary-font-color);
 }
 
 .bride .bride_couple,
@@ -35,100 +40,101 @@
 }
 
 .bride .bride_couple ul {
-    gap: 1rem;
+    gap: 3rem;
+    list-style: none;
 }
 
 .bride .bride_couple li figure img {
-    width: 12rem;
-    height: 12rem;
+    width: 15rem;
+    height: 15rem;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: var(--shadow-md);
+    border: 3px solid var(--gold);
+    padding: 6px;
+    background: #fff;
 }
 
 .bride .bride_couple li figure figcaption {
-    font-size: var(--fontSize-heading-base);
-    margin: 1rem 0;
+    font-size: 2.8rem;
+    margin: 1.5rem 0 0.5rem;
     font-family: var(--sacramento);
+    color: var(--gold);
+}
+
+.bride .bride_couple li p {
+    font-family: var(--josefin);
+    font-size: 1rem;
+    color: var(--primary-font-color);
+    max-width: 80%;
 }
 
 .bride .bride_couple span {
-    font-size: 3.4rem;
+    font-size: 4rem;
     font-family: var(--sacramento);
     font-weight: 400;
-    margin-top: 1rem;
+    margin: 2rem 0;
+    color: var(--gold);
 }
 
-.bride i, .hadist i, .time a + p + i, .galeri > i {
-    font-size: 3rem;
-    color: #908d8d;
+.bride i, .hadist i {
+    font-size: 2.5rem;
+    color: var(--gold-light);
+    opacity: 0.4;
     position: absolute;
-    z-index: 10;
-    animation: upAndDown 3s infinite;
+    z-index: 1;
+    animation: upAndDown 4s ease-in-out infinite;
 }
 
-.bride i:nth-of-type(1) {
-    top: 14rem;
-    right: 8rem;
-}
-
-.bride i:nth-of-type(2){
-    left: 8rem;
-    top: 24rem;
-}
-
-.bride i:nth-of-type(3) {
-    top: 54rem;
-    right: 8rem;
-}
-
-.bride i:nth-of-type(4){
-    top: 60rem;
-    left: 8rem;
-}
-
-.bride i:nth-of-type(5){
-    right: 8rem;
-    bottom: 6rem;
-}
+.bride i:nth-of-type(1) { top: 10%; right: 5%; }
+.bride i:nth-of-type(2) { top: 20%; left: 5%; }
+.bride i:nth-of-type(3) { bottom: 20%; right: 5%; }
+.bride i:nth-of-type(4) { bottom: 10%; left: 5%; }
+.bride i:nth-of-type(5) { bottom: 5%; right: 10%; }
 
 .hadist {
     width: 100%;
-    padding: 4rem 8rem;
+    padding: 8rem 1rem;
     text-align: center;
-    background-color: var(--bg-color);
+    background-color: var(--bg-secondary);
     position: relative;
+    border-top: 1px solid var(--gold-light);
+    border-bottom: 1px solid var(--gold-light);
+    overflow: hidden;
 }
 
 .hadist h2 {
-    font-size: var(--fontSize-heading-base);
+    font-size: 2.2rem;
     font-family: var(--sacramento);
     font-weight: 400;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    color: var(--gold);
+}
+
+.hadist p {
+    font-family: var(--josefin);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--primary-font-color);
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
 }
 
 .hadist p span {
     display: block;
-    margin-top: 1rem;
-    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--gold);
 }
 
 .hadist i {
-    top: 16rem;
-    left: 8rem;
+    top: 10%;
+    left: 10%;
 }
 
 .hadist svg {
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -10;
-}
-
-.hadist svg:nth-of-type(1){
-    top: -8rem;
-}
-
-.hadist svg:nth-of-type(2){
-    bottom: -15rem;
+    display: none;
 }

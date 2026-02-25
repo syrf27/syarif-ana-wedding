@@ -2,92 +2,95 @@ export const data = {
     bride: {
         L: {
             id: 1,
-            name: 'Lorem Ipsum',
-            child: 'Putra ke lorem',
-            father: 'Lorem',
-            mother: 'Ipsum',
-            image: './src/assets/images/cowo.png'
+            name: 'ACHMAD SYARIEF MUSTAFFA',
+            nickname: 'Syarief',
+            child: 'Putra pertama',
+            father: 'UMAR EDY',
+            mother: 'ISWATIN',
+            image: './src/assets/images/pria.jpeg'
         },
         P: {
             id: 2,
-            name: 'Ipsum Lorem',
-            child: 'Putri ke lorem',
-            father: 'Lorem',
-            mother: 'Ipsum',
-            image: './src/assets/images/cewe.png'
+            name: "SITI NI'MATUL JANAH",
+            nickname: 'Ana',
+            child: 'Putri pertama',
+            father: 'SUDIRMAN',
+            mother: 'UMI KHASANAH',
+            image: './src/assets/images/wanita.jpeg'
         },
 
-        couple: './src/assets/images/couple.png'
+        couple: './src/assets/images/cover.png'
     },
 
     time: {
         marriage: {
-            year: '2030',
-            month: 'November',
-            date: '14',
-            day: 'Kamis',
+            year: '2026',
+            month: 'Maret',
+            date: '29',
+            day: 'Ahad',
             hours: {
                 start: '08.00',
                 finish: 'Selesai'
             }
         },
         reception: {
-            year: '2024',
-            month: 'November',
-            date: '14',
-            day: 'Kamis',
+            year: '2026',
+            month: 'Maret',
+            date: '29',
+            day: 'Ahad',
             hours: {
                 start: '11.00',
-                finish: 'Selesai'
+                finish: '14.00'
             }
         },
-        address: 'Kp. Lorem, RT 000/ RW 000, Desa.Lorem, Kec.Ipsum, Kab.Lorem, Lorem (1234)'
+        address: 'Link. Widengan RT/RW 03/13 Kel. Gedongombo-Kec.Semanding-Kab.Tuban'
     },
 
     link: {
         calendar: 'https://calendar.app.google/oSVLRMYC79GzuA4f9',
-        map: 'https://maps.app.goo.gl/q1Ask2Jgd4ekiiKBA',
+        map: 'https://maps.app.goo.gl/2G2MQkRXM3Fig6Cx7',
     },
 
     galeri: [
         {
             id: 1,
-            image: './src/assets/images/1.png'
+            image: './src/assets/images/foto_2.png'
         },
         {
             id: 2,
-            image: './src/assets/images/2.png'
-        },
-        {
-            id: 3,
-            image: './src/assets/images/3.png'
-        },
-        {
-            id: 4,
-            image: './src/assets/images/4.png'
-        },
-        {
-            id: 5,
-            image: './src/assets/images/5.png'
+            image: './src/assets/images/foto_3.png'
         }
+        // ,
+        // {
+        //     id: 3,
+        //     image: './src/assets/images/3.png'
+        // },
+        // {
+        //     id: 4,
+        //     image: './src/assets/images/4.png'
+        // },
+        // {
+        //     id: 5,
+        //     image: './src/assets/images/5.png'
+        // }
     ],
 
     bank: [
         {
             id: 1,
-            name: 'Lorem Ipsum',
+            name: 'Achmad syarief Musyaffa',
             icon: './src/assets/images/bca.png',
-            rekening: '12345678'
+            rekening: '8241193152'
         },
         {
             id: 2,
-            name: 'Ipsum Lorem',
+            name: "Siti Ni'amatul Janah",
             icon: './src/assets/images/bri.png',
-            rekening: '12345678'
+            rekening: '658001005324508'
         },
     ],
 
-    audio: './src/assets/audio/wedding.mp3',
+    audio: './src/assets/audio/Bermuara.mp3',
 
     api: 'https://script.google.com/macros/s/AKfycbyydz6N4p2VWUG8zsXeURv6ap9RP8a4eC3x6N3x6qTDjMVr1cIBz9S0NsHw2rWvBOSXGg/exec',
 

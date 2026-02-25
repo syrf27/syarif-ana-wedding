@@ -6,14 +6,20 @@ import {
     getCurrentDateTime,
     renderElement
 } from "../utils/helper.js";
-import {data} from "../assets/data/data.js";
-import {comentarService} from "../services/comentarService.js";
+import { data } from "../assets/data/data.js";
+import { comentarService } from "../services/comentarService.js";
 
 export const wishas = () => {
     const wishasContainer = document.querySelector('.wishas');
-    const [_, form] = wishasContainer.children[2].children;
-    const [peopleComentar, ___, containerComentar] = wishasContainer.children[3].children;
-    const buttonForm = form.children[6];
+
+    // Using robust selectors instead of children indices
+    const formSection = wishasContainer.querySelector('div:nth-of-type(2)');
+    const form = formSection.querySelector('form');
+    const commentSection = wishasContainer.querySelector('div:nth-of-type(3)');
+    const peopleComentar = commentSection.querySelector('p');
+    const containerComentar = commentSection.querySelector('ul');
+    const buttonForm = form.querySelector('button[type="submit"]');
+
     const pageNumber = wishasContainer.querySelector('.page-number');
     const [prevButton, nextButton] = wishasContainer.querySelectorAll('.button-grup button');
 
@@ -26,8 +32,8 @@ export const wishas = () => {
     );
 
     const initialBank = () => {
-        const wishasBank = wishasContainer.children[1];
-        const [_, __, containerBank] = wishasBank.children;
+        const wishasBank = wishasContainer.querySelector('div:nth-of-type(1)');
+        const containerBank = wishasBank.querySelector('div');
 
         renderElement(data.bank, containerBank, listItemBank);
 
@@ -82,7 +88,7 @@ export const wishas = () => {
 
         try {
             const response = await comentarService.getComentar();
-            const {comentar} = response;
+            const { comentar } = response;
 
             lengthComentar = comentar.length;
             comentar.reverse();
@@ -144,7 +150,7 @@ export const wishas = () => {
 
         try {
             const response = await comentarService.getComentar();
-            const {comentar} = response;
+            const { comentar } = response;
 
             comentar.reverse();
 

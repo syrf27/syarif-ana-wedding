@@ -1,21 +1,25 @@
-import {data} from "../assets/data/data.js";
-import {monthNameToNumber} from "../utils/helper.js";
+import { data } from "../assets/data/data.js";
+import { monthNameToNumber } from "../utils/helper.js";
 
 export const home = () => {
     const homeContainer = document.querySelector('.home');
-    const [_, figureElement, timeElement, homeTime, calendarAnchor] = homeContainer.children;
+    const figureElement = homeContainer.querySelector('figure');
+    const timeElement = homeContainer.querySelector('h3');
+    const homeTime = homeContainer.querySelector('.home-time');
+    const calendarAnchor = homeContainer.querySelector('a');
 
-    const generateFigureContent = ({bride}) => {
-        const {L: {name: brideLName}, P: {name: bridePName}, couple: coupleImage} = bride;
+    const generateFigureContent = ({ bride }) => {
+        const { L: { nickname: brideLNickname }, P: { nickname: bridePNickname }, couple: coupleImage } = bride;
         return `
-            <img src="${coupleImage}" alt="couple animation">
-            <figcaption>
-                ${brideLName.split(' ')[0]} & ${bridePName.split(' ')[0]}
-            </figcaption>`;
+            <div style="position: relative; display: inline-block;">
+                <div class="portrait-frame"></div>
+                <img src="${coupleImage}" alt="couple animation">
+            </div>
+            <figcaption class="sacramento-font"><div class="heart-name-bg"><video autoplay loop muted playsinline><source src="src/assets/images/Heart fly transparent BG!.webm" type="video/webm"></video></div>${brideLNickname} <i class='bx bxs-heart-circle gold-text' style='font-size: 2rem; vertical-align: middle; margin: 0 0.5rem;'></i> ${bridePNickname}</figcaption>`;
     };
 
-    const generateTimeContent = ({time}) => {
-        const {year, month, date, day} = time.marriage;
+    const generateTimeContent = ({ time }) => {
+        const { year, month, date, day } = time.marriage;
         return `
         <time datetime="${year}-${String(monthNameToNumber(month)).padStart(2, '0')}-${String(date).padStart(2, '0')}">
             ${day}, ${date} ${month} ${year}
@@ -47,7 +51,6 @@ export const home = () => {
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         if (distance < 0) {
-            clearInterval(intervalId);
             homeTime.innerHTML = generateCountdownMarkup(0, 0, 0, 0);
         } else {
             homeTime.innerHTML = generateCountdownMarkup(days, hours, minutes, seconds);
@@ -55,7 +58,7 @@ export const home = () => {
     };
 
     const startCountdown = (homeTime, timeData) => {
-        const {year, month, date} = timeData.marriage;
+        const { year, month, date } = timeData.marriage;
         const endTime = new Date(`${String(year)}-${String(monthNameToNumber(month)).padStart(2, '0')}-${String(date).padStart(2, '0')}T00:00:00`);
 
         updateCountdown(endTime, homeTime);
@@ -63,9 +66,9 @@ export const home = () => {
     };
 
     const initializeHome = () => {
-        const {bride, time, link} = data;
-        figureElement.innerHTML = generateFigureContent({bride});
-        timeElement.innerHTML = generateTimeContent({time});
+        const { bride, time, link } = data;
+        figureElement.innerHTML = generateFigureContent({ bride });
+        timeElement.innerHTML = generateTimeContent({ time });
         calendarAnchor.href = link.calendar;
         startCountdown(homeTime, time);
     };

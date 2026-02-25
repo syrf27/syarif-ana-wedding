@@ -1,45 +1,72 @@
 footer {
-    margin-top: 6rem;
     width: 100%;
-    padding: 4rem 8rem;
+    padding: 6rem 1rem 4rem;
     text-align: center;
+    background-color: var(--white);
+    border-top: 1px solid var(--gold-light);
+}
+
+footer p {
+    font-family: var(--josefin);
+    font-size: 1rem;
+    color: var(--primary-font-color);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
 }
 
 footer h2 {
-    font-size: var(--fontSize-heading-base);
+    font-size: 2.2rem;
     font-family: var(--sacramento);
     font-weight: 400;
-    margin-top: 1rem;
+    color: var(--gold);
+    margin: 1.5rem 0;
 }
 
 footer h4 {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-family: var(--arabic);
     font-weight: 400;
+    color: var(--gold);
+    margin-bottom: 3rem;
 }
 
 footer > div {
     width: 100%;
+    max-width: 800px;
+    margin: 2rem auto 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid #000;
-    margin-top: 1rem;
-    padding-top: 0.6rem;
+    border-top: 1px solid var(--gold-light);
+    padding-top: 2rem;
 }
 
 footer > div p {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+    color: var(--primary-font-color);
+    margin: 0;
 }
 
 footer > div p span {
-    font-weight: bold;
+    font-weight: 600;
+    color: var(--gold);
 }
 
 footer > div a {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000;
-    font-size: 0.8rem;
+    gap: 0.5rem;
+    color: var(--gold);
+    font-size: 0.9rem;
+    font-family: var(--josefin);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-small);
+}
+
+footer > div a:hover {
+    color: var(--gold-light);
 }

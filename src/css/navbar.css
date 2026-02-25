@@ -4,26 +4,31 @@ header {
 
 header nav {
     display: none;
-    width: 100%;
-    padding: 0 1.4rem;
-    background-color: var(--bg-color);
+    width: 95%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     position: fixed;
-    left: 0;
-    right: 0;
+    left: 50%;
     bottom: -100%;
-    z-index: 99;
-    transform: translateY(0);
-    transition: bottom 2s ease, transform 1s ease;
+    z-index: 100;
+    transform: translateX(-50%) translateY(0);
+    transition: bottom 1.5s cubic-bezier(0.7, 0, 0.3, 1), transform 0.5s ease;
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gold-light);
 }
 
 header nav.active {
-    bottom: 0;
+    bottom: 1.5rem;
 }
 
 header nav.scroll {
-    transform: translateY(100%);
+    transform: translateX(-50%) translateY(200%);
 }
 
 header nav a {
@@ -31,21 +36,30 @@ header nav a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 0.1rem;
-    width: 4rem;
-    height: 3rem;
-    color: #000;
+    gap: 0.2rem;
+    padding: 0.6rem 0.5rem;
+    color: var(--primary-font-color);
+    transition: var(--transition-small);
 }
 
 header nav a i {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    color: var(--primary-font-color);
 }
 
 header nav a span {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
+    font-family: var(--josefin);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-header nav a:hover {
-    background-color: #000;
-    color: #fff;
+header nav a:hover, header nav a.active {
+    color: var(--gold);
+}
+
+header nav a:hover i, header nav a.active i {
+    color: var(--gold);
+    transform: translateY(-2px);
 }
