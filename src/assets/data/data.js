@@ -2,7 +2,7 @@ export const data = {
     bride: {
         L: {
             id: 1,
-            name: 'ACHMAD SYARIEF MUSTAFFA',
+            name: 'ACHMAD SYARIEF MUSYAFFA',
             nickname: 'Syarief',
             child: 'Putra pertama',
             father: 'UMAR EDY',
@@ -47,28 +47,28 @@ export const data = {
     },
 
     link: {
-        calendar: 'https://calendar.app.google/oSVLRMYC79GzuA4f9',
+        calendar: 'https://calendar.app.google/oebKVUt8bGeDQwyq5',
         map: 'https://maps.app.goo.gl/2G2MQkRXM3Fig6Cx7',
     },
 
     galeri: [
         {
             id: 1,
-            image: './src/assets/images/foto_2.png'
+            image: './src/assets/images/kartun_4.jpg'
         },
         {
             id: 2,
-            image: './src/assets/images/foto_3.png'
+            image: './src/assets/images/kartun_3.jpg'
         }
-        // ,
-        // {
-        //     id: 3,
-        //     image: './src/assets/images/3.png'
-        // },
-        // {
-        //     id: 4,
-        //     image: './src/assets/images/4.png'
-        // },
+        ,
+        {
+            id: 3,
+            image: './src/assets/images/kartun_2.jpg'
+        },
+        {
+            id: 4,
+            image: './src/assets/images/kartun_1.jpg'
+        },
         // {
         //     id: 5,
         //     image: './src/assets/images/5.png'
@@ -92,7 +92,7 @@ export const data = {
 
     audio: './src/assets/audio/Bermuara.mp3',
 
-    api: 'https://script.google.com/macros/s/AKfycbyydz6N4p2VWUG8zsXeURv6ap9RP8a4eC3x6N3x6qTDjMVr1cIBz9S0NsHw2rWvBOSXGg/exec',
+    api: 'https://script.google.com/macros/s/AKfycbxox6RfMf7wN3ck0PoTKA4foInSPX38Ws3oScphEySD68N4L-yP_V4kjqTggVjXTZ7v/exec',
 
     navbar: [
         {
